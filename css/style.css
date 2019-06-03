@@ -61,7 +61,7 @@ h3 {
 }
 
 #home-heading h3 {
-    color: rgb(0, 0, 0);
+    color: #000000;
     font-size: 70px;
     font-weight: 700;
     margin: 20px 0 20px 0;
@@ -94,8 +94,8 @@ h3 {
 }
 
 .btn-white {
-    border-color: rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
+    border-color: #000000;
+    color: #000000;
 }
 
 .btn-white:hover,
