@@ -270,6 +270,7 @@ h3 {
 }
 
 .img-wrapper {
+    display: grid;
     overflow: hidden;
 }
 
