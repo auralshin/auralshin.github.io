@@ -88,7 +88,7 @@ h3 {
     border-width: 2px;
     border-radius: 0;
     padding: 12px 26px 12px 26px;
-    font-size: 25px;
+    font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -100,8 +100,8 @@ h3 {
 
 .btn-white:hover,
 .btn-white:focus {
-    background-color: rgb(167, 79, 79);
-    color: #41464b;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
 }
 
 .btn-blue {
@@ -223,7 +223,7 @@ h3 {
 
 #about-bg-diagonal {
     width: 60%;
-    height: 700px;
+    height: 400px;
     float: right;
     background-image: url(../img/bg-about.jpg);
     border-left: 200px solid rgb(255, 255, 255);
@@ -232,7 +232,7 @@ h3 {
 
 #about-content-box {
     float: left;
-    height: 700px;
+    height: 400px;
 }
 
 #about-content-box-outer {
