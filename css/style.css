@@ -134,22 +134,22 @@ h3 {
 #home-heading,
 #home-btn {
     -webkit-animation-duration: .5s;
-            animation-duration: .5s;
+    animation-duration: .5s;
 }
 
 #home-cover {
     -webkit-animation-delay: .1s;
-            animation-delay: .1s;
+    animation-delay: .1s;
 }
 
 #home-heading {
     -webkit-animation-delay: .5s;
-            animation-delay: .5s;
+    animation-delay: .5s;
 }
 
 #home-btn {
     -webkit-animation-delay: 1s;
-            animation-delay: 1s;
+    animation-delay: 1s;
 }
 
 
@@ -256,7 +256,7 @@ h3 {
 
 #about-desc p {
     margin-bottom: 30px;
-    color: 	rgb(0, 1, 10)
+    color: rgb(0, 1, 10)
 }
 
 
@@ -283,7 +283,7 @@ h3 {
 
 .img-wrapper img:hover {
     -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    transform: scale(1.5);
     cursor: zoom-in;
 }
 
@@ -544,7 +544,7 @@ footer {
 }
 
 #contact-info {
-    background-image: url("../img/world-map.png");
+    background-image: url("../img/ht.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -552,7 +552,11 @@ footer {
 address {
     color: #fff;
 }
-address strong { font-size: 16px; }
+
+address strong {
+    font-size: 16px;
+}
+
 address strong,
 #phone-fax-email strong {
     letter-spacing: 1px;
@@ -624,6 +628,7 @@ form .form-control {
     -webkit-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
 }
+
 .vesco-top-nav {
     background: rgba(0, 0, 0, 0.7);
     padding: 7px 0;
