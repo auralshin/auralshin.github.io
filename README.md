@@ -1,3 +1,3 @@
 # auralshin
 website
-[auralshin.github.io/auralshin]
+[website link](auralshin.github.io/auralshin)
