@@ -1,3 +1,3 @@
 # auralshin
 
-[website link](auralshin.me)
+[website link](http://auralshin.me)
