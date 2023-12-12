@@ -4,7 +4,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { PiMediumLogoBold } from "react-icons/pi";
 import { PiTelegramLogoDuotone } from "react-icons/pi";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
-
+import bbbbImage from "./bbbb.png";
 function App() {
   type ListItem = {
     text: string;
@@ -100,13 +100,18 @@ function App() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen w-full p-6">
-      <div className="text-3xl">Auralshin</div>
-      <div className="text-center m-5">
-        I'm a blockchain developer with a focus on <br />
-        infrastructure and system design.
+    <div
+      className="flex flex-col justify-center items-center min-h-screen w-full p-6"
+      style={{ backgroundImage: `url(${bbbbImage})` }}
+    >
+      <div className="text-3xl text-white">Auralshin</div>
+      <div className="bg-white opacity-50 m-6 rounded-2xl">
+        <div className="text-center m-5">
+          I'm a blockchain developer with a focus on <br />
+          infrastructure and system design.
+        </div>
       </div>
-      <div className="social-links flex flex-row gap-x-12 bg-gray-400 rounded-2xl p-4">
+      <div className="social-links flex flex-row gap-x-12 bg-white rounded-2xl p-4">
         <a
           href="https://www.linkedin.com/in/auralshin"
           target="_blank"
@@ -146,11 +151,15 @@ function App() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center w-[80vw]">
         <section className="h-full flex flex-col">
-          <h2 className="text-2xl flex-grow">ACHIEVEMENTS</h2>
+          <div className="bg-white opacity-50 m-6 rounded-2xl">
+            <h2 className="text-2xl flex-grow">ACHIEVEMENTS</h2>
+          </div>
           <List items={achievements} />
         </section>
         <section className="h-full flex flex-col">
-          <h2 className="text-2xl flex-grow">PROJECTS / RESEARCH PAPER</h2>
+          <div className="bg-white opacity-50 m-6 rounded-2xl">
+            <h2 className="text-2xl flex-grow">PROJECTS / RESEARCH PAPER</h2>
+          </div>
           <List items={projects} />
         </section>
       </div>
