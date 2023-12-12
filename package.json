@@ -2,7 +2,6 @@
   "name": "app-name",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://auralshin.github.io/auralshin.github.io",
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
