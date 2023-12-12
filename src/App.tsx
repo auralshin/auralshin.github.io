@@ -14,7 +14,7 @@ function App() {
     items: ListItem[];
   };
   const List: React.FC<ListItemProps> = ({ items }) => (
-    <div className="card w-auto shadow-xl bg-[#ffffff] h-[35vh] ">
+    <div className="card w-auto shadow-xl bg-[#ffffff] h-auto flex-grow">
       <div className="card-body text-left hover:bg-[#e2e8f0]">
         <ul>
           {items.map((item, index) => (
@@ -100,13 +100,12 @@ function App() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center h-[100vh]">
+    <div className="flex flex-col justify-center items-center min-h-screen w-full p-6">
       <div className="text-3xl">Auralshin</div>
       <div className="text-center m-5">
         I'm a blockchain developer with a focus on <br />
         infrastructure and system design.
       </div>
-      {/* className="lg:tooltip" data-tip="hello" */}
       <div className="social-links flex flex-row gap-x-12 bg-gray-400 rounded-2xl p-4">
         <a
           href="https://www.linkedin.com/in/auralshin"
@@ -145,17 +144,16 @@ function App() {
           <PiTelegramLogoDuotone />
         </a>
       </div>
-      <div className="grid grid-cols-2 gap-4 text-center w-[80vw]">
-        <section>
-          <h2 className="text-2xl">ACHIEVEMENTS</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center w-[80vw]">
+        <section className="h-full flex flex-col">
+          <h2 className="text-2xl flex-grow">ACHIEVEMENTS</h2>
           <List items={achievements} />
         </section>
-        <section>
-          <h2 className="text-2xl">PROJECTS / RESEARCH PAPER</h2>
+        <section className="h-full flex flex-col">
+          <h2 className="text-2xl flex-grow">PROJECTS / RESEARCH PAPER</h2>
           <List items={projects} />
         </section>
       </div>
-      <div className="flex flex-row gap-8 text-center "></div>
     </div>
   );
 }
