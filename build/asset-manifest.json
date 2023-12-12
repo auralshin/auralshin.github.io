@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/auralshin.github.io/static/css/main.0332679f.css",
+    "main.js": "/auralshin.github.io/static/js/main.19ded396.js",
+    "static/js/787.830efbcc.chunk.js": "/auralshin.github.io/static/js/787.830efbcc.chunk.js",
+    "index.html": "/auralshin.github.io/index.html",
+    "main.0332679f.css.map": "/auralshin.github.io/static/css/main.0332679f.css.map",
+    "main.19ded396.js.map": "/auralshin.github.io/static/js/main.19ded396.js.map",
+    "787.830efbcc.chunk.js.map": "/auralshin.github.io/static/js/787.830efbcc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0332679f.css",
+    "static/js/main.19ded396.js"
+  ]
+}
