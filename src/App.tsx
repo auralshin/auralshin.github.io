@@ -2,6 +2,7 @@ import React from "react";
 import { PiLinkedinLogoBold } from "react-icons/pi";
 import { BsTwitterX } from "react-icons/bs";
 import { PiMediumLogoBold } from "react-icons/pi";
+import { PiGithubLogoBold } from "react-icons/pi";
 import { PiTelegramLogoDuotone } from "react-icons/pi";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import bbbbImage from "./bbbb.png";
@@ -120,6 +121,15 @@ function App() {
           data-tip="Linkedin"
         >
           <PiLinkedinLogoBold />
+        </a>
+        <a
+          href="https://www.github.com/auralshin"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full hover:bg-[#e2e8f0] p-3 tooltip"
+          data-tip="Github"
+        >
+          <PiGithubLogoBold />
         </a>
         <a
           href="https://www.x.com/auralshin"
