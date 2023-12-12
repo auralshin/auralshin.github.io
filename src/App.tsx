@@ -15,11 +15,11 @@ function App() {
     items: ListItem[];
   };
   const List: React.FC<ListItemProps> = ({ items }) => (
-    <div className="card w-auto shadow-xl bg-[#ffffff] h-auto flex-grow">
-      <div className="card-body text-left hover:bg-[#e2e8f0]">
+    <div className="card w-auto shadow-xl bg-white opacity-90 h-auto flex-grow">
+      <div className="card-body text-left ">
         <ul>
           {items.map((item, index) => (
-            <li key={index} className="flex align-center ">
+            <li key={index} className="flex align-center text-[#383D41]">
               {item.url ? (
                 <>
                   <p>{item.text}</p>
@@ -105,14 +105,14 @@ function App() {
       className="flex flex-col justify-center items-center min-h-screen w-full p-6"
       style={{ backgroundImage: `url(${bbbbImage})` }}
     >
-      <div className="text-3xl text-white">Auralshin</div>
-      <div className="bg-white opacity-50 m-6 rounded-2xl">
-        <div className="text-center m-5">
+      <div className="text-4xl md:text-7xl text-white font-bold text-shadow-[0_4px_8px_var(--tw-shadow-color)] shadow-black">Auralshin</div>
+      <div className="bg-white opacity-90 m-6 rounded-2xl">
+        <div className="text-center text-[#383D41] m-5">
           I'm a blockchain developer with a focus on <br />
           infrastructure and system design.
         </div>
       </div>
-      <div className="social-links flex flex-row gap-x-12 bg-white rounded-2xl p-4">
+      <div className="social-links flex flex-row gap-x-8 md:gap-x-12 bg-white rounded-2xl p-4">
         <a
           href="https://www.linkedin.com/in/auralshin"
           target="_blank"
@@ -161,14 +161,14 @@ function App() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center w-[80vw]">
         <section className="h-full flex flex-col">
-          <div className="bg-white opacity-50 m-6 rounded-2xl">
-            <h2 className="text-2xl flex-grow">ACHIEVEMENTS</h2>
+          <div className="bg-white opacity-90 m-6 rounded-2xl">
+            <h2 className="text-2xl text-[#383D41] flex-grow">ACHIEVEMENTS</h2>
           </div>
           <List items={achievements} />
         </section>
         <section className="h-full flex flex-col">
-          <div className="bg-white opacity-50 m-6 rounded-2xl">
-            <h2 className="text-2xl flex-grow">PROJECTS / RESEARCH PAPER</h2>
+          <div className="bg-white opacity-90 m-6 rounded-2xl">
+            <h2 className="text-2xl text-[#383D41] flex-grow">PROJECTS / RESEARCH PAPER</h2>
           </div>
           <List items={projects} />
         </section>
