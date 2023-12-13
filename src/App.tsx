@@ -5,6 +5,7 @@ import { PiMediumLogoBold } from "react-icons/pi";
 import { PiGithubLogoBold } from "react-icons/pi";
 import { PiTelegramLogoDuotone } from "react-icons/pi";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
+import { SiGoogledocs } from "react-icons/si";
 import bbbbImage from "./bbbb.png";
 function App() {
   type ListItem = {
@@ -112,7 +113,7 @@ function App() {
           infrastructure and system design.
         </div>
       </div>
-      <div className="social-links flex flex-row gap-x-8 md:gap-x-12 bg-white rounded-2xl p-4">
+      <div className="social-links flex flex-row flex-wrap md:flex-nowrap gap-x-8 md:gap-x-12 bg-white rounded-2xl p-4">
         <a
           href="https://www.linkedin.com/in/auralshin"
           target="_blank"
@@ -130,6 +131,15 @@ function App() {
           data-tip="Github"
         >
           <PiGithubLogoBold />
+        </a>
+        <a
+          href="https://shorturl.at/gjAUX"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full hover:bg-[#e2e8f0] p-3 tooltip"
+          data-tip="Resume"
+        >
+          <SiGoogledocs />
         </a>
         <a
           href="https://www.x.com/auralshin"
