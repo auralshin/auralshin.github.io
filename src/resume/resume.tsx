@@ -1,11 +1,13 @@
 // Resume.tsx
-import React from "react";
+import React, { useRef } from "react";
 import { PiLinkedinLogoBold } from "react-icons/pi";
 import { BsTwitterX } from "react-icons/bs";
 import { PiMediumLogoBold } from "react-icons/pi";
 import { PiGithubLogoBold } from "react-icons/pi";
 import { PiTelegramLogoDuotone } from "react-icons/pi";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
+import { useReactToPrint } from 'react-to-print';
+
 // Types.ts
 export interface SidebarSectionProps {
   title: string;
@@ -88,11 +90,14 @@ const Projects: React.FC<ProjectProps> = ({ descriptions, link }) => {
       <ul className="list-disc ml-5 text-gray-700">
         {descriptions.map((desc, index) => (
           <li key={index} className="text-sm">
-            <a href={`${link[index]}`} className="hover:underline flex items-center gap-x-2" target="_blank" rel="noopener noreferrer">
-                <p>
-                {desc}
-                </p>
-            <LiaExternalLinkAltSolid className="inline-block" />
+            <a
+              href={`${link[index]}`}
+              className="hover:underline flex items-center gap-x-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>{desc}</p>
+              <LiaExternalLinkAltSolid className="inline-block" />
             </a>
           </li>
         ))}
@@ -127,7 +132,13 @@ export const SidebarLinks: React.FC<SidebarLinkProps> = ({ title, links }) => {
       <div className="flex-1 border-t-2 mb-4 border-black"></div>
       <div className="space-y-1 flex flex-col no-underline text-xs md:text-base">
         {links.map((link, index) => (
-          <a key={index} href={link.url} className="text-black hover:underline flex gap-x-2 items-center" target="_blank" rel="noopener noreferrer">
+          <a
+            key={index}
+            href={link.url}
+            className="text-black hover:underline flex gap-x-2 items-center"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {link.logo}
             <p>{link.name}</p>
           </a>
@@ -137,11 +148,10 @@ export const SidebarLinks: React.FC<SidebarLinkProps> = ({ title, links }) => {
   );
 };
 const Resume: React.FC = () => {
-  const headerInfo = {
-    name: "Anshul Kumar",
-    phone: "+9173496 32938",
-    email: "anshulspartan14@gmail.com",
-  };
+  const componentRef = useRef<HTMLDivElement>(null);
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
 
   const NameCard = () => {
     return (
@@ -157,15 +167,31 @@ const Resume: React.FC = () => {
     "Node.js",
     "Go (Programming Language)",
     "TypeScript / JavaScript",
-    "Ethereum"
+    "Ethereum",
   ];
   const languages = ["English", "Hindi"];
   const links = [
     { name: "GitHub", url: "https://github.com", logo: <PiGithubLogoBold /> },
-    { name: "LinkedIn", url: "https://linkedin.com", logo: <PiLinkedinLogoBold /> },
-    { name: "Twitter", url: "https://twitter.com/auralshin", logo: <BsTwitterX />},
-    { name: "Medium", url: "https://medium.com/@auralshin", logo: <PiMediumLogoBold />},
-    { name: "Telegram", url: "https://t.me/Auralshin", logo: <PiTelegramLogoDuotone />},
+    {
+      name: "LinkedIn",
+      url: "https://linkedin.com",
+      logo: <PiLinkedinLogoBold />,
+    },
+    {
+      name: "Twitter",
+      url: "https://twitter.com/auralshin",
+      logo: <BsTwitterX />,
+    },
+    {
+      name: "Medium",
+      url: "https://medium.com/@auralshin",
+      logo: <PiMediumLogoBold />,
+    },
+    {
+      name: "Telegram",
+      url: "https://t.me/Auralshin",
+      logo: <PiTelegramLogoDuotone />,
+    },
   ];
   const profileData = {
     summary:
@@ -258,7 +284,7 @@ const Resume: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-4xl font-sans mx-auto h-auto grid grid-cols-12 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div ref={componentRef} id="resume" className="max-w-4xl font-sans mx-auto h-auto grid grid-cols-12 bg-white shadow-lg rounded-lg overflow-hidden">
       <NameCard />
       <div className="bg-gray-400 col-span-4">
         <aside className="mt-36" aria-label="Sidebar">
@@ -270,6 +296,17 @@ const Resume: React.FC = () => {
             <SidebarLinks title="LINKS" links={links} />
             <SidebarSection title="SKILLS" items={skills} />
             <SidebarSection title="LANGUAGES" items={languages} />
+            <div className="flex flex-col justify-center">
+              <div className="text-xl font-bold mb-2 tracking-wider">Download or Print</div>
+              <div className="flex-1 border-t-2 mb-4 border-black"></div>
+
+              <button
+                onClick={handlePrint}
+                className="bg-black text-white py-2 px-4 rounded"
+              >
+                Download
+              </button>
+              </div>
           </div>
         </aside>
       </div>
@@ -305,10 +342,11 @@ const Resume: React.FC = () => {
               {projects.map((exp, index) => (
                 <Projects key={index} {...exp} />
               ))}
-              </div>
+            </div>
           </div>
         </div>
       </div>
+      
     </div>
   );
 };
