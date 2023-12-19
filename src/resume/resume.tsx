@@ -134,7 +134,7 @@ export const SidebarSectionX: React.FC<SidebarSectionProps> = ({
       <div className="flex-1 border-t-2 mb-4 border-black "></div>
       <div className="space-y-1 text-xs md:text-base  ">
         {items.map((item, index) => (
-          <p key={index} className="text-gray-800 break-all blur-xl">
+          <p key={index} className="text-gray-800 break-all blur-sm">
             {item}
           </p>
         ))}
