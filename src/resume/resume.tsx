@@ -132,7 +132,7 @@ export const SidebarSectionX: React.FC<SidebarSectionProps> = ({
     <div className="mb-6">
       <div className="font-bold text-lg mb-2">{title}</div>
       <div className="flex-1 border-t-2 mb-4 border-black "></div>
-      <div className="space-y-1 text-xs md:text-base  ">
+      <div className="space-y-1 text-xs md:text-base tooltip" data-tip="Contact Info">
         {items.map((item, index) => (
           <p key={index} className="text-gray-800 break-all blur-sm">
             {item}
