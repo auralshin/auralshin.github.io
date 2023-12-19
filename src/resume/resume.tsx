@@ -124,6 +124,24 @@ export const SidebarSection: React.FC<SidebarSectionProps> = ({
     </div>
   );
 };
+export const SidebarSectionX: React.FC<SidebarSectionProps> = ({
+  title,
+  items,
+}) => {
+  return (
+    <div className="mb-6">
+      <div className="font-bold text-lg mb-2">{title}</div>
+      <div className="flex-1 border-t-2 mb-4 border-black "></div>
+      <div className="space-y-1 text-xs md:text-base  ">
+        {items.map((item, index) => (
+          <p key={index} className="text-gray-800 break-all blur-xl">
+            {item}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export const SidebarLinks: React.FC<SidebarLinkProps> = ({ title, links }) => {
   return (
@@ -289,7 +307,7 @@ const Resume: React.FC = () => {
       <div className="bg-gray-400 col-span-4">
         <aside className="mt-36" aria-label="Sidebar">
           <div className="overflow-y-auto py-4 px-3 bg-transparent rounded">
-            <SidebarSection
+            <SidebarSectionX
               title="DETAILS"
               items={["+91 73496 32938", "anshulspartan141@gmail.com"]}
             />
