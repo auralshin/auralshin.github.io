@@ -263,6 +263,7 @@ const Resume: React.FC = () => {
       location: "Singapore",
       descriptions: [
         "Spearheaded the design and launch of a sophisticated banking application, optimizing for the crypto-fiat sector with advanced backend solutions in Nest Js, Go, and Rust.",
+        "Engineered a Rust-based ZK Prover for Merkle tree-based transactions",
         "Accelerated the Nest Js compiler performance with Rust enhancements, reducing deployment latency from 27 seconds to approximately 0.3 seconds.",
         "Orchestrated the implementation of LC flow for app-specific trade finance and invoice factoring on the blockchain, streamlining operations.",
         "Engineered and deployed on-chain Real-World Assets (RWA) smart contracts, propelling the company's foray into blockchain finance.",
