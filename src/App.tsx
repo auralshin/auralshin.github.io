@@ -114,7 +114,7 @@ function App() {
         </div>
       </div>
       <div className="social-links flex flex-row flex-wrap md:flex-nowrap gap-x-8 md:gap-x-12 bg-white rounded-2xl p-4">
-        <a
+        {/* <a
           href="https://www.linkedin.com/in/auralshin"
           target="_blank"
           rel="noopener noreferrer"
@@ -122,7 +122,7 @@ function App() {
           data-tip="Linkedin"
         >
           <PiLinkedinLogoBold />
-        </a>
+        </a> */}
         <a
           href="https://www.github.com/auralshin"
           target="_blank"
@@ -132,7 +132,7 @@ function App() {
         >
           <PiGithubLogoBold />
         </a>
-        <a
+        {/* <a
           href="https://shorturl.at/gjAUX"
           target="_blank"
           rel="noopener noreferrer"
@@ -140,7 +140,7 @@ function App() {
           data-tip="Resume"
         >
           <SiGoogledocs />
-        </a>
+        </a> */}
         <a
           href="https://www.x.com/auralshin"
           target="_blank"

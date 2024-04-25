@@ -6,6 +6,7 @@ import { PiMediumLogoBold } from "react-icons/pi";
 import { PiGithubLogoBold } from "react-icons/pi";
 import { PiTelegramLogoDuotone } from "react-icons/pi";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
 import { useReactToPrint } from 'react-to-print';
 import MockWindow from "./mock-window";
 
@@ -135,7 +136,7 @@ export const SidebarSectionX: React.FC<SidebarSectionProps> = ({
       <div className="flex-1 border-t-2 mb-4 border-black "></div>
       <div className="space-y-1 text-xs md:text-base tooltip" data-tip="Contact Info">
         {items.map((item, index) => (
-          <p key={index} className="text-gray-800 break-all blur-sm">
+          <p key={index} className="text-gray-800 break-all ">
             {item}
           </p>
         ))}
@@ -214,7 +215,7 @@ const Resume: React.FC = () => {
   ];
   const profileData = {
     summary:
-      "Experienced Engineer with a proven track record in system design, implementation, and optimization. Throughout my career, I've honed my expertise in architecting solutions that not only meet technical excellence but also align seamlessly with overarching business objectives. My passion lies in crafting innovative, efficient, and scalable systems, where I've consistently demonstrated my ability to balance technical rigor with a keen understanding of strategic goals.",
+      "An Engineer with expertise in system design, implementation, and optimization. I've honed my expertise in architecting solutions that not only meet technical excellence but also align seamlessly with overarching business objectives. My passion lies in crafting innovative, efficient, and scalable systems, where I've consistently demonstrated my ability to balance technical rigor with a keen understanding of strategic goals.",
   };
   const achievements = [
     {
@@ -304,8 +305,9 @@ const Resume: React.FC = () => {
   ];
 
   return (
+    <Document>
     <div className="flex justify-center items-center">
-      <MockWindow>
+      {/* <MockWindow> */}
       <div ref={componentRef} id="resume" className=" max-w-4xl font-sans mx-auto h-auto grid grid-cols-12 bg-white shadow-lg rounded-b-lg overflow-hidden">
         <NameCard />
         <div className="bg-gray-400 col-span-4">
@@ -318,7 +320,7 @@ const Resume: React.FC = () => {
               <SidebarLinks title="LINKS" links={links} />
               <SidebarSection title="SKILLS" items={skills} />
               <SidebarSection title="LANGUAGES" items={languages} />
-              <div className="flex flex-col justify-center">
+              <div className="flex flex-col justify-center hidden">
                 <div className="text-xl font-bold mb-2 tracking-wider">Download or Print</div>
                 <div className="flex-1 border-t-2 mb-4 border-black"></div>
                 <button
@@ -367,8 +369,9 @@ const Resume: React.FC = () => {
         </div>
       
       </div>
-      </MockWindow>
+      {/* </MockWindow> */}
     </div>
+    </Document>
   );
 };
 
