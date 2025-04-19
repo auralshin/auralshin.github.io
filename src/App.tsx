@@ -206,7 +206,6 @@ const DarkModeToggle: React.FC = () => {
 
 const App: React.FC = () => {
   const componentRef = useRef<HTMLDivElement>(null);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const contact = ["work@anshulrai.dev"];
   const links: SidebarLink[] = [
@@ -309,8 +308,12 @@ const App: React.FC = () => {
                   PROFILE
                 </h2>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Engineer specializing in system design, implementation, and
-                  optimization— focused on scalable, business-aligned solutions.
+                  Results-oriented engineer with deep expertise in system design
+                  and optimization, currently focused on building innovative and
+                  scalable solutions in Decentralized Finance (DeFi) and
+                  financial engineering. Adept at aligning technical
+                  architecture with strategic business objectives to drive
+                  growth and efficiency.
                 </p>
               </section>
             </div>

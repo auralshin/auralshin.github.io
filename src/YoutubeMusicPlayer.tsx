@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const playlist = [
   { id: "jfKfPfyJRdk", title: "Lofi Beats - Chill" },
@@ -7,7 +7,12 @@ const playlist = [
 
 const YouTubeMusicPlayer: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoplay, setAutoplay] = useState(false);
   const currentTrack = playlist[currentIndex];
+
+  useEffect(() => {
+    setAutoplay(true);
+  }, []);
 
   const handleSelect = (index: number) => {
     setCurrentIndex(index);
@@ -30,7 +35,7 @@ const YouTubeMusicPlayer: React.FC = () => {
       {/* Player */}
       <div className="rounded overflow-hidden border mb-4">
         <iframe
-          key={currentTrack.id} // forces re-render to trigger autoplay
+          key={`${currentTrack.id}-${autoplay}`}
           width="100%"
           height="180"
           src={`https://www.youtube.com/embed/${currentTrack.id}?autoplay=1&enablejsapi=1`}
