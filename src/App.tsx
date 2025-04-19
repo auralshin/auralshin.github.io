@@ -8,6 +8,7 @@ import {
 import { BsTwitterX } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import GitHubRepos from "./gh";
+import YoutubeMusicPlayer from "./YoutubeMusicPlayer";
 
 interface SidebarSectionProps {
   title: string;
@@ -291,6 +292,9 @@ const App: React.FC = () => {
             <SidebarSection title="LANGUAGES" items={languages} />
             <div className="mt-4">
               <MediumSidebarScroll />
+            </div>
+            <div className="mt-4">
+              <YoutubeMusicPlayer />
             </div>
           </aside>
 
