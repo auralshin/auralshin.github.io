@@ -9,6 +9,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import GitHubRepos from "./gh";
 import YoutubeMusicPlayer from "./YoutubeMusicPlayer";
+import TravelSnaps from "./travel";
 
 interface SidebarSectionProps {
   title: string;
@@ -164,46 +165,6 @@ const MediumSidebarScroll: React.FC = () => {
   );
 };
 
-const DarkModeToggle: React.FC = () => {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (
-      storedTheme === "dark" ||
-      (!storedTheme &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-      setIsDark(true);
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    const html = document.documentElement;
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-    } else {
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-    }
-  };
-
-  return (
-    <button
-      onClick={toggleDarkMode}
-      className="fixed bg-red-800 top-4 right-4 z-50 px-4 py-1.5 text-sm font-medium rounded-full shadow-lg transition-all
-       text-white hover:bg-gray-800
-        dark:bg-whit dark:hover:bg-gray-200"
-    >
-      {isDark ? "☀ Light Mode" : "🌙 Dark Mode"}
-    </button>
-  );
-};
-
 const App: React.FC = () => {
   const componentRef = useRef<HTMLDivElement>(null);
 
@@ -241,7 +202,6 @@ const App: React.FC = () => {
     "TypeScript",
     "Ethereum",
   ];
-  const languages = ["English", "Hindi"];
 
   const experiences: ExperienceItem[] = [
     {
@@ -279,6 +239,37 @@ const App: React.FC = () => {
 
   return (
     <div className="flex justify-center py-10 min-h-screen font-sans from-gray-50 via-white to-gray-100 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
+        <div className="absolute top-4 left-4 rotate-[-6deg] w-64">
+          <img
+            alt=""
+            src="/travel/1.jpg"
+            className="rounded-lg shadow-md brightness-90"
+          />
+        </div>
+        <div className="absolute top-20 right-10 rotate-[5deg] w-56">
+          <img
+            alt=""
+            src="/travel/2.jpg"
+            className="rounded-lg shadow-md brightness-90"
+          />
+        </div>
+        <div className="absolute bottom-8 left-10 rotate-[8deg] w-72">
+          <img
+            alt=""
+            src="/travel/3.jpg"
+            className="rounded-lg shadow-md brightness-90"
+          />
+        </div>
+        <div className="absolute bottom-8 right-10 rotate-[-5deg] w-72">
+          <img
+            alt=""
+            src="/travel/4.png"
+            className="rounded-lg shadow-lg brightness-90 blur-[0.5px] saturate-90"
+          />
+        </div>
+      </div>
+
       <div
         ref={componentRef}
         className="w-full max-w-6xl bg-white backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden border border-gray-200"
@@ -288,7 +279,10 @@ const App: React.FC = () => {
             <SidebarSection title="CONTACT" items={contact} />
             <SidebarLinks title="LINKS" links={links} />
             <SidebarSection title="SKILLS" items={skills} />
-            <SidebarSection title="LANGUAGES" items={languages} />
+            <div className="mt-6">
+              <TravelSnaps />
+            </div>
+
             <div className="mt-4">
               <MediumSidebarScroll />
             </div>
