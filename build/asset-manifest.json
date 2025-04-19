@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.36be3568.css",
-    "main.js": "./static/js/main.ee2736a4.js",
-    "static/js/787.830efbcc.chunk.js": "./static/js/787.830efbcc.chunk.js",
-    "index.html": "./index.html",
-    "main.36be3568.css.map": "./static/css/main.36be3568.css.map",
-    "main.ee2736a4.js.map": "./static/js/main.ee2736a4.js.map",
-    "787.830efbcc.chunk.js.map": "./static/js/787.830efbcc.chunk.js.map"
+    "main.css": "/auralshin.github.io/static/css/main.36be3568.css",
+    "main.js": "/auralshin.github.io/static/js/main.f78454a3.js",
+    "static/js/787.830efbcc.chunk.js": "/auralshin.github.io/static/js/787.830efbcc.chunk.js",
+    "index.html": "/auralshin.github.io/index.html",
+    "main.36be3568.css.map": "/auralshin.github.io/static/css/main.36be3568.css.map",
+    "main.f78454a3.js.map": "/auralshin.github.io/static/js/main.f78454a3.js.map",
+    "787.830efbcc.chunk.js.map": "/auralshin.github.io/static/js/787.830efbcc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.36be3568.css",
-    "static/js/main.ee2736a4.js"
+    "static/js/main.f78454a3.js"
   ]
 }
