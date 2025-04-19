@@ -6,9 +6,8 @@ import {
   PiTelegramLogoDuotone,
 } from "react-icons/pi";
 import { BsTwitterX } from "react-icons/bs";
-import { MediumFeed } from "./medium";
+import { useEffect, useState } from "react";
 
-// Types
 interface SidebarSectionProps {
   title: string;
   items: string[];
@@ -23,8 +22,14 @@ interface ExperienceItem {
   company: string;
   period: string;
 }
+interface MediumPost {
+  title: string;
+  link: string;
+  thumbnail: string;
+  pubDate: string;
+  description: string;
+}
 
-// Sidebar section component
 const SidebarSection: React.FC<SidebarSectionProps> = ({ title, items }) => (
   <div className="mb-6">
     <h3 className="font-bold text-sm text-gray-700 tracking-wide uppercase mb-2">{title}</h3>
@@ -37,7 +42,6 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({ title, items }) => (
   </div>
 );
 
-// Sidebar links component
 const SidebarLinks: React.FC<{ title: string; links: SidebarLink[] }> = ({
   title,
   links,
@@ -62,12 +66,7 @@ const SidebarLinks: React.FC<{ title: string; links: SidebarLink[] }> = ({
   </div>
 );
 
-// Experience item component
-const ExperienceCard: React.FC<ExperienceItem> = ({
-  role,
-  company,
-  period,
-}) => (
+const ExperienceCard: React.FC<ExperienceItem> = ({ role, company, period }) => (
   <div className="mb-4">
     <div className="flex justify-between items-center">
       <h4 className="font-semibold text-gray-900 text-sm md:text-base">{role}</h4>
@@ -76,6 +75,69 @@ const ExperienceCard: React.FC<ExperienceItem> = ({
     <p className="text-gray-600 text-xs italic">{company}</p>
   </div>
 );
+
+const MediumSidebarScroll: React.FC = () => {
+  const [posts, setPosts] = useState<MediumPost[]>([]);
+
+  useEffect(() => {
+    fetch(
+      `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@auralshin`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        const latest = data.items.slice(0, 5).map((item: any) => {
+          const cleanDesc = item.description?.replace(/<[^>]+>/g, '') || '';
+          let img = item.thumbnail;
+          if (!img) {
+            const match = item.content?.match(/<img[^>]+src=\"([^\">]+)\"/i);
+            img = match ? match[1] : '';
+          }
+          return {
+            title: item.title,
+            link: item.link,
+            thumbnail: img,
+            pubDate: item.pubDate,
+            description: cleanDesc,
+          };
+        });
+        setPosts(latest);
+      });
+  }, []);
+
+  return (
+    <div className="flex flex-col justify-between h-full">
+      <h3 className="font-bold text-sm text-gray-700 tracking-wide uppercase mb-2">Latest on Medium</h3>
+      <div className="space-y-4 flex-grow overflow-y-auto pr-1 no-scrollbar">
+        {posts.map((post, i) => (
+          <a
+            key={i}
+            href={post.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex border border-gray-200 bg-white rounded-lg overflow-hidden shadow hover:shadow-md transition-transform hover:-translate-y-1"
+          >
+            {post.thumbnail && (
+              <img
+                src={post.thumbnail}
+                alt={post.title}
+                className="w-24 h-full object-cover flex-shrink-0"
+              />
+            )}
+            <div className="p-3 text-left">
+              <h4 className="font-semibold text-sm text-gray-800 mb-1 line-clamp-2">{post.title}</h4>
+              <p className="text-xs text-gray-600 line-clamp-2 mb-1">{post.description}</p>
+              <p className="text-[10px] text-gray-400 uppercase">
+                {new Date(post.pubDate).toLocaleDateString(undefined, {
+                  month: 'short', day: 'numeric', year: 'numeric',
+                })}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Resume: React.FC = () => {
   const componentRef = useRef<HTMLDivElement>(null);
@@ -110,11 +172,14 @@ const Resume: React.FC = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-12">
           {/* Sidebar */}
-          <aside className="md:col-span-4 bg-gray-100 p-6 border-r border-gray-200">
+          <aside className="md:col-span-4 bg-gray-100 p-6 border-r border-gray-200 flex flex-col h-full">
             <SidebarSection title="CONTACT" items={contact} />
             <SidebarLinks title="LINKS" links={links} />
             <SidebarSection title="SKILLS" items={skills} />
             <SidebarSection title="LANGUAGES" items={languages} />
+            <div className="flex-grow">
+              <MediumSidebarScroll />
+            </div>
           </aside>
 
           {/* Main Content */}
@@ -136,8 +201,6 @@ const Resume: React.FC = () => {
                 <ExperienceCard key={idx} {...exp} />
               ))}
             </section>
-
-            <MediumFeed username="auralshin" />
           </div>
         </div>
       </div>
