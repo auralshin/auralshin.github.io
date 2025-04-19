@@ -22,3 +22,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* scrollbar.css */
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.2) transparent;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.3);
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.5);
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
