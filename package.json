@@ -2,6 +2,7 @@
   "name": "app-name",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://auralshin.github.io/auralshin.github.io",
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
@@ -37,7 +38,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
