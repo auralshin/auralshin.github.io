@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import Resume from './resume/resume';
 import PDF from './pdf/resume';
 import reportWebVitals from './reportWebVitals';
@@ -14,9 +13,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<App />} />
-        {/* <Route path="/" element={<Resume />} />
-        <Route path="/pdf" element={<PDF/>} /> */}
+        {/* <Route path="/" element={<App />} /> */}
+        <Route path="/" element={<Resume />} />
+        <Route path="/pdf" element={<PDF/>} />
       </Routes>
     </Router>
   </React.StrictMode>
