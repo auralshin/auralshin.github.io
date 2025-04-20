@@ -46,7 +46,9 @@ const GitHubRepos: React.FC = () => {
   return (
     <section className="mb-10 py-10 px-6 rounded-2xl">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-bold text-gray-800 tracking-tight">PROJECTS</h2>
+        <h2 className="text-xl font-bold text-gray-800 tracking-tight">
+          PROJECTS
+        </h2>
         <a
           href="https://github.com/auralshin"
           target="_blank"
@@ -58,13 +60,14 @@ const GitHubRepos: React.FC = () => {
         </a>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {repos.map((repo) => (
+        {repos.map((repo, index) => (
           <a
             key={repo.id}
             href={repo.html_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block p-5 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition duration-300"
+            className={`block p-5 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition duration-300
+      ${index > 1 ? "hidden md:block" : ""}`}
           >
             <h3 className="font-semibold text-gray-900 text-base mb-1">
               {repo.name}

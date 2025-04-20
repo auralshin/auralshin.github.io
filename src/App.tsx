@@ -275,7 +275,7 @@ const App: React.FC = () => {
         className="w-full max-w-6xl bg-white backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden border border-gray-200"
       >
         <div className="grid grid-cols-1 md:grid-cols-12">
-          <aside className="col-span-full md:col-span-4 p-6 h-full bg-white/70 backdrop-blur-md border-r border-gray-200 shadow-lg rounded-none md:rounded-l-2xl bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] bg-repeat bg-cover overflow-y-auto custom-scroll">
+          <aside className="order-2 md:order-1 md:col-span-4 p-6 bg-white/70 backdrop-blur-md border-r border-gray-200 shadow-lg rounded-none md:rounded-l-2xl bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] bg-repeat bg-cover overflow-y-auto custom-scroll">
             <SidebarSection title="CONTACT" items={contact} />
             <SidebarLinks title="LINKS" links={links} />
             <SidebarSection title="SKILLS" items={skills} />
@@ -291,7 +291,7 @@ const App: React.FC = () => {
             </div>
           </aside>
 
-          <div className="md:col-span-8 p-8 animate-fade-in duration-500 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] bg-repeat bg-cover rounded-none md:rounded-r-2xl">
+          <div className="order-1 md:order-2 md:col-span-8 p-6 md:p-8 animate-fade-in duration-500 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] bg-repeat bg-cover rounded-none md:rounded-r-2xl">
             <div className="mb-8">
               <h1 className="text-4xl font-bold text-gray-900 tracking-tight mb-4">
                 ANSHUL RAI
