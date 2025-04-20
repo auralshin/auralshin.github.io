@@ -10,6 +10,7 @@ const travelPhotos = [
 const TravelSnaps: React.FC = () => {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
+  
   return (
     <>
       <div className="mt-6">
